@@ -1,6 +1,4 @@
 
-
-
 /* Importing a handwriting font */
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
@@ -104,5 +102,3 @@ button:disabled {
 .choice:hover {
     transform: scale(1.2);
 }
-
-
