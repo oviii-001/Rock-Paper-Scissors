@@ -1,5 +1,4 @@
 
-
 let playerScore = 0;
 let computerScore = 0;
 let roundCount = 0;
@@ -19,9 +18,14 @@ document.getElementById('startGame').addEventListener('click', () => {
         return;
     }
     document.querySelector('.choices').style.display = 'block';
-    document.getElementById('startGame').disabled = true;
+    document.getElementById('startGame').style.display = 'none';
+    document.getElementById('restartGame').style.display = 'inline-block';
     document.getElementById('playerName').disabled = true;
     updateLiveScore();
+});
+
+document.getElementById('restartGame').addEventListener('click', () => {
+    resetGame();
 });
 
 function getComputerChoice() {
@@ -103,11 +107,24 @@ function displayWinner() {
     `;
 }
 
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    roundCount = 0;
+    playerName = '';
+    document.getElementById('playerName').value = '';
+    document.getElementById('playerName').disabled = false;
+    document.getElementById('startGame').style.display = 'inline-block';
+    document.getElementById('restartGame').style.display = 'none';
+    document.querySelector('.choices').style.display = 'none';
+    document.querySelector('.result').innerHTML = '';
+    document.querySelector('.liveScore').innerHTML = '';
+    document.querySelector('.scoreboard').innerHTML = '';
+}
+
 document.querySelectorAll('.choice').forEach(button => {
     button.addEventListener('click', () => {
         const userChoice = button.getAttribute('data-choice');
         playGame(userChoice);
     });
-
 });
-
