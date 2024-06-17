@@ -1,8 +1,7 @@
 
-/* Importing a handwriting font */
+
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
-/* Basic layout */
 body {
     font-family: 'Indie Flower', cursive;
     display: flex;
