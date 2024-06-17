@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors Game [mby-OVI]</title>
-     <meta property="og:image" content="1.png">
+    <meta property="og:image" content="1.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Rock Paper Scissors</h1>
-        <div class="choices">
-            <button id="rock" class="choice">✊</button>
-            <button id="paper" class="choice">✋</button>
-            <button id="scissors" class="choice">✌️</button>
+        <div>
+            <input type="text" id="playerName" placeholder="Enter your name">
+            <button id="startGame">Start Game</button>
+        </div>
+        <div class="choices" style="display: none;">
+            <button id="rock" class="choice" data-choice="rock">✊</button>
+            <button id="paper" class="choice" data-choice="paper">✋</button>
+            <button id="scissors" class="choice" data-choice="scissors">✌️</button>
         </div>
         <div id="result" class="result"></div>
+        <div id="scoreboard" class="scoreboard"></div>
     </div>
     <script src="script.js"></script>
 </body>
