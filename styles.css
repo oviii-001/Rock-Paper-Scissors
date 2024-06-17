@@ -1,7 +1,12 @@
 
+
+
+/* Importing a handwriting font */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 /* Basic layout */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Indie Flower', cursive;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +28,32 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before, .container::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    top: -50%;
+    left: -50%;
+    animation: rotate 6s linear infinite;
+}
+
+.container::after {
+    animation-direction: reverse;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 input[type="text"] {
@@ -57,7 +88,7 @@ button:disabled {
     cursor: not-allowed;
 }
 
-.result, .scoreboard {
+.result, .scoreboard, .liveScore {
     margin-top: 20px;
     font-size: 1.2em;
     color: #333;
@@ -73,3 +104,5 @@ button:disabled {
 .choice:hover {
     transform: scale(1.2);
 }
+
+
